@@ -13,6 +13,13 @@ module.exports = app => {
             res.json(notes);
         });
 
+        app.post("/api/notes", function(req, res) {
+            let newNote = req.body;
+            notes.push(newNote);
+            updateDb();
+            return console.log("Added new note: "+newNote.title);
+        });
+
 
 
         app.get("/api/notes/:id", function(req,res) {
