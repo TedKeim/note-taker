@@ -30,3 +30,6 @@ Create a pull request on the repository
 ## Contact
 GitHub: TedKeim
 Email: tedkeim21@gmail.com
+
+
+Link to deployed app: https://note-taker-tak.herokuapp.com/
