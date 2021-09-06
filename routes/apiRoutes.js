@@ -12,7 +12,7 @@ module.exports = (app) => {
     res.json(data[Number(req.params.id)]);
   });
 
-  router.delete('/api/notes/:id', (req, res) => {
+  app.delete('/api/notes/:id', (req, res) => {
     const deleteId = req.params.id
 
     Middle.deleteNote(deleteId)
