@@ -19,20 +19,6 @@ module.exports = (app) => {
     data.push(note);
     req.body.id = uuidv4();
 
-    app.delete("/api/notes/:id", (req, res) => {
-        notes.splice(req.params.id, 1);
-        updateDb();
-        console.log("Deleted note with id "+req.params.id);
-    });
-
-    function updateDb() {
-        fs.writeFile("db/db.json",JSON.stringify(notes,'\t'),err => {
-            if (err) throw err;
-            return true;
-        });
-    }
-
-
     fs.writeFileSync("../db/db.json", JSON.stringify(data), (err) => {
       if (err) console.log(err);
     });
