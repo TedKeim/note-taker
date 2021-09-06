@@ -1,5 +1,5 @@
 const fs = require("fs");
-const data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+const data = JSON.parse(fs.readFileSync("./develop/db/db.json", "utf8"));
 const { v4: uuidv4 } = require('uuid');
 
 
@@ -20,7 +20,7 @@ module.exports = (app) => {
     req.body.id = uuidv4();
 
 
-    fs.writeFileSync("../db/db.json", JSON.stringify(data), (err) => {
+    fs.writeFileSync("./develop/db/db.json", JSON.stringify(data), (err) => {
       if (err) console.log(err);
     });
 
