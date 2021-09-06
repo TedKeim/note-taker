@@ -1,5 +1,5 @@
 const fs = require("fs");
-const data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+const data = JSON.parse(fs.readFileSync("../db/db.json", "utf8"));
 const { v4: uuidv4 } = require('uuid');
 
 
