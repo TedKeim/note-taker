@@ -1,5 +1,5 @@
 const fs = require('fs') 
-const uniqid = require('uniqid') 
+const { v4: uuidv4 } = require('uuid');
 const util = require('util') 
 const noteFile = require('./db.json')
 
@@ -14,11 +14,10 @@ readFile(){
 }
 
 async writeFile(note){
-    note.id = uniqid()
-    console.log('about to write this note to db.json ', note)
+    note.id = uniqueID()
     const notes = await this.getNotes()
-    notes.push(note)
-    console.log('notes ', notes)
+    data.push(note);
+    req.body.id = uuidv4();
     return fs.writeFileSync("db/db.json", JSON.stringify(notes)), err => {
         if (err) throw err;
     }
